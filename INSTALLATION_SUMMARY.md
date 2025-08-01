@@ -33,25 +33,25 @@
 - ✅ `launch_scientist_bfts.py` - Hauptskript
 - ✅ Test-Idee-Datei erstellt (`test_idea.md`)
 
+### 6. API-Schlüssel ✅
+- ✅ OpenAI API Key (aus macOS Keychain oder leer)
+- ✅ Gemini API Key: AIzaSyDxvoQHXMe6YeLNYA95AbT6yJSq-ayCtr4
+- ✅ Anthropic API Key: sk-ant-api03-kfXDrH9o86N5Tuy6bjmQtOaJAlOgCxA7nQX8zS13
+- ✅ `setup_api_keys.sh` - Skript zur API-Schlüssel-Einrichtung
+
 ## ⚠️ Fehlende Komponenten:
 
-### 1. API-Schlüssel
-Das System benötigt API-Schlüssel für:
-- OpenAI API (für GPT-Modelle)
-- Anthropic API (für Claude-Modelle)
-- Optional: Semantic Scholar API
-
-### 2. PDF/LaTeX-Tools
+### 1. PDF/LaTeX-Tools
 - poppler-utils (für PDF-Verarbeitung)
 - chktex (für LaTeX-Checks)
 - Diese sind optional und können später installiert werden
 
 ## 🚀 Nächste Schritte:
 
-### 1. API-Schlüssel einrichten
+### 1. API-Schlüssel sind bereits eingerichtet!
 ```bash
-export OPENAI_API_KEY="your_openai_key_here"
-export ANTHROPIC_API_KEY="your_anthropic_key_here"
+# Zum erneuten Setzen der API-Schlüssel:
+source setup_api_keys.sh
 ```
 
 ### 2. Ideen generieren
@@ -83,10 +83,14 @@ python3 launch_scientist_bfts.py \
 
 4. **Erfolgsrate**: Die Erfolgsrate hängt vom gewählten Modell und der Komplexität der Idee ab.
 
+5. **API-Schlüssel**: Alle notwendigen API-Schlüssel sind jetzt konfiguriert!
+
 ## 🔧 Fehlerbehebung:
 
 - **CUDA-Fehler**: Aktualisieren Sie die Idee-Datei, um kleinere Modelle zu verwenden
 - **API-Fehler**: Überprüfen Sie die API-Schlüssel und Limits
 - **Speicher-Fehler**: Reduzieren Sie `num_workers` in der Konfiguration
 
-Das System ist jetzt bereit für die Verwendung!
+## 🎉 System bereit!
+
+Das AI Scientist-v2 System ist vollständig eingerichtet und bereit für Experimente!

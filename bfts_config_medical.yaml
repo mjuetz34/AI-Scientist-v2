@@ -1,0 +1,82 @@
+# Configuration for AI Scientist v2 - Medical Research Focus
+# Specialized for CD44 biomarker research in HNSCC
+
+# path to the task data directory
+data_dir: "medical_data"
+preprocess_data: True
+
+goal: "Develop AI-enhanced analysis methods for CD44 biomarker research in head and neck cancer"
+eval: "Clinical prediction accuracy, survival analysis performance, biomarker validation metrics"
+
+log_dir: logs
+workspace_dir: workspaces
+
+# whether to copy the data to the workspace directory
+copy_data: True
+
+exp_name: cd44_hnscc_research
+
+# settings for code execution - extended timeout for medical data processing
+exec:
+  timeout: 7200  # 2 hours for complex medical analyses
+  agent_file_name: medical_analysis.py
+  format_tb_ipython: True
+
+generate_report: True
+# LLM settings optimized for medical research
+report:
+  model: gpt-4o-2024-11-20
+  temp: 0.7  # Lower temperature for more conservative medical research
+
+experiment:
+  num_syn_datasets: 3  # Multiple synthetic datasets for robustness
+
+debug:
+  stage4: True  # Enable detailed debugging for medical applications
+
+# agent hyperparams optimized for medical research
+agent:
+  type: parallel
+  num_workers: 3  # Conservative parallel processing for medical data
+  stages:
+    stage1_max_iters: 25  # Extended exploration for medical hypotheses
+    stage2_max_iters: 20  # Thorough data analysis
+    stage3_max_iters: 15  # Comprehensive model validation
+    stage4_max_iters: 12  # Detailed clinical interpretation
+  steps: 8
+  k_fold_validation: 5  # Robust cross-validation for medical models
+  multi_seed_eval:
+    num_seeds: 3
+  expose_prediction: True  # Important for medical interpretability
+  data_preview: True  # Essential for medical data understanding
+
+  # LLM settings for medical coding - using Claude for biomedical expertise
+  code:
+    model: anthropic.claude-3-5-sonnet-20241022-v2:0
+    temp: 0.8  # Balanced creativity and precision for medical code
+    max_tokens: 16000  # Extended for complex medical analyses
+
+  # Medical-focused feedback with conservative temperature
+  feedback:
+    model: gpt-4o-2024-11-20
+    temp: 0.3  # Very conservative for medical feedback
+    max_tokens: 12000
+
+  vlm_feedback:
+    model: gpt-4o-2024-11-20
+    temp: 0.4
+    max_tokens: null
+
+  search:
+    max_debug_depth: 4  # Extended debugging for medical applications
+    debug_prob: 0.7  # Higher probability of debugging medical issues
+    num_drafts: 4  # More initial drafts for medical research robustness
+
+# Medical research specific settings
+medical:
+  domain: "oncology"
+  focus: "biomarker_analysis"
+  data_types: ["immunohistochemistry", "clinical_outcomes", "survival_data"]
+  validation_requirements: "clinical_grade"
+  ethics_compliance: true
+  regulatory_considerations: true

@@ -1,0 +1,78 @@
+[
+    {
+        "Name": "unsupervised_transformer_forecasting",
+        "Title": "Unsupervised Pre-training for Enhanced Time Series Forecasting with Transformer Models",
+        "Short Hypothesis": "Unsupervised pre-training on large-scale time series data can improve the forecasting performance of Transformer models by capturing intrinsic patterns and structures that would be missed in purely supervised training.",
+        "Related Work": "Several studies have explored unsupervised pre-training for time series forecasting, such as LSTM-based stacked autoencoders. However, there is limited work on applying unsupervised pre-training to Transformer models in this context. Transformer's self-attention mechanism has shown superior performance in capturing long-range dependencies compared to LSTMs, making them an ideal candidate for this investigation. Notable works include Sagheer et al. (2019) on LSTM-SAE and various studies using unsupervised clustering for forecasting, but they do not leverage the full potential of Transformer architectures.",
+        "Abstract": "This research proposes a novel approach to time series forecasting by integrating unsupervised pre-training with Transformer models. While LSTM-based models have been explored for unsupervised pre-training, the application of such techniques to Transformer models remains under-explored. This study leverages unsupervised learning methods such as masked model pre-training to capture intrinsic patterns in time series data before fine-tuning the models on specific forecasting tasks. The hypothesis is that this two-step training process will significantly enhance the forecasting accuracy and robustness of Transformer models. The approach will be evaluated on standard time series datasets across various domains, and compared against baseline models trained purely in a supervised manner. Evaluation metrics will include MAE, RMSE, and MAPE, with statistical significance tests to validate improvements.",
+        "Experiments": [
+            "Data Collection and Preprocessing: Collect various standard time series datasets (e.g., M4, Solar-Energy, Exchange-Rate). Preprocess the data for consistency and normalization.",
+            "Unsupervised Pre-training: Implement unsupervised learning objectives such as masked language model (MLM) pre-training tailored to time series data. Pre-train Transformer models on the unlabeled datasets using these objectives.",
+            "Supervised Fine-tuning: Fine-tune the pre-trained models on labeled datasets specific to forecasting tasks. Compare the performance with models trained from scratch in a supervised manner.",
+            "Evaluation Metrics: Use standard forecasting metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and Mean Absolute Percentage Error (MAPE). Conduct a statistical significance test to validate the improvements."
+        ],
+        "Risk Factors and Limitations": [
+            "Overfitting in Fine-tuning: Pre-trained models may overfit during the fine-tuning phase, leading to suboptimal generalization.",
+            "Computational Complexity: The two-step training process can be computationally intensive and time-consuming.",
+            "Transferability: Pre-trained models may not transfer well across different domains or types of time series data, limiting generalization."
+        ]
+    },
+    {
+        "Name": "dynamic_online_nas_forecasting",
+        "Title": "Dynamic Online Neural Architecture Search for Adaptive Time Series Forecasting",
+        "Short Hypothesis": "Dynamic, online Neural Architecture Search (NAS) can continuously adapt neural network architectures for time series forecasting in real-time, improving robustness to non-stationary data and concept drift.",
+        "Related Work": "Previous studies such as 'AutoCTS++' and 'Online Evolutionary NAS' have explored NAS for time series forecasting, with some focusing on online adaptation. However, these approaches often lack a comprehensive framework that dynamically updates both architecture and parameters in real-time. Our proposal distinguishes itself by focusing on a fully dynamic, online NAS framework specifically designed to handle non-stationary time series data, making models more resilient to concept drift.",
+        "Abstract": "This research proposes a dynamic online Neural Architecture Search (NAS) framework tailored for adaptive time series forecasting. While traditional NAS methods have been applied to optimize neural network architectures, they often fall short in handling non-stationary data and concept drift inherent in real-world time series. Our dynamic online NAS framework continuously searches for and adapts neural network architectures in real-time, ensuring robustness and improved forecasting accuracy. The framework incorporates reinforcement learning and evolutionary algorithms to dynamically update both the architecture and parameters as new data streams in. This approach will be evaluated on standard time series datasets with varying degrees of non-stationarity. Evaluation metrics will include Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and Mean Absolute Percentage Error (MAPE). The proposed dynamic online NAS aims to push the boundaries of time series forecasting by providing a robust, adaptive solution capable of real-time model optimization.",
+        "Experiments": [
+            "Data Collection and Preprocessing: Collect standard time series datasets (e.g., M4, Solar-Energy, Exchange-Rate). Preprocess data for consistency and normalization.",
+            "Dynamic Online NAS Framework Development: Develop a dynamic online NAS framework using reinforcement learning and evolutionary algorithms. Implement mechanisms to dynamically update both architecture and parameters in real-time.",
+            "Search and Training: Run the dynamic online NAS to search for optimal architectures on a subset of the datasets. Continuously train and adapt the discovered architectures as new data streams in.",
+            "Evaluation: Evaluate the performance of the dynamically adapted architectures using MAE, RMSE, and MAPE. Compare the results against baseline models, such as standard LSTMs, GRUs, and Transformers.",
+            "Ablation Study: Conduct an ablation study to understand the contribution of different components in the dynamic online NAS framework."
+        ],
+        "Risk Factors and Limitations": [
+            "Computational Complexity: Dynamic online NAS is computationally intensive, though feasible within an academic lab with resource optimization.",
+            "Search Space Limitations: The predefined search space may inadvertently exclude potentially effective architectures.",
+            "Generalization: Discovered architectures may not generalize well across different types of time series data, necessitating dataset-specific searches.",
+            "Overfitting: Risk of overfitting during the search process, leading to architectures that perform well on training data but poorly on unseen data."
+        ]
+    },
+    {
+        "Name": "explainable_neural_forecasting",
+        "Title": "Explainable Time Series Forecasting using Interpretable Neural Networks",
+        "Short Hypothesis": "By integrating explainable AI techniques directly into time series forecasting models, we can achieve high forecasting accuracy while providing valuable insights into the model's decision-making process.",
+        "Related Work": "Current literature on time series forecasting primarily focuses on improving accuracy using complex models like LSTMs and Transformers but often lacks interpretability. Techniques like SHAP and LIME have been used post-hoc for explanations. Notable works include 'Attention is All You Need' (Vaswani et al., 2017), 'Explainable AI: The New Frontier in AI Research' (Samek et al., 2019), and Ister: Inverted Seasonal-Trend Decomposition Transformer (Cao et al., 2024). Our proposal distinguishes itself by embedding explainability directly into the model architecture, rather than relying on post-hoc methods.",
+        "Abstract": "This research proposes a novel approach to time series forecasting by embedding explainability directly into neural network architectures. Traditional models like LSTMs and Transformers, while powerful, often lack interpretability, making it challenging to understand their decision-making processes. This study aims to develop interpretable neural networks that maintain high forecasting accuracy while providing clear insights into the model's internal workings. We will explore techniques such as attention mechanisms, self-explaining neural networks, and inherently interpretable models like the Neural Additive Model (NAM). The hypothesis is that integrating these explainable AI techniques will not only improve transparency but also enhance model performance by enabling better feature selection and understanding of temporal dynamics. The approach will be evaluated on standard time series datasets across various domains, comparing the performance and interpretability against traditional 'black box' models. Evaluation metrics will include MAE, RMSE, MAPE, and explainability metrics such as fidelity and stability.",
+        "Experiments": [
+            "Data Collection and Preprocessing: Collect various standard time series datasets (e.g., M4, Solar-Energy, Exchange-Rate). Preprocess the data for consistency and normalization.",
+            "Model Development: Develop interpretable neural networks using techniques such as attention mechanisms, self-explaining neural networks, and Neural Additive Models (NAMs). Incorporate explainability objectives into the training process.",
+            "Baseline Comparison: Train traditional 'black box' models like LSTMs and Transformers on the same datasets. Use post-hoc explainability techniques (e.g., SHAP, LIME) for comparison.",
+            "Evaluation Metrics: Forecasting accuracy: MAE, RMSE, MAPE. Explainability: fidelity, stability, and user studies to assess interpretability.",
+            "Ablation Study: Conduct an ablation study to understand the contribution of each explainability component in the model."
+        ],
+        "Risk Factors and Limitations": [
+            "Model Complexity: Integrating explainability might increase the complexity of the model, potentially affecting training time and resource requirements.",
+            "Trade-off Between Accuracy and Interpretability: There may be a trade-off between achieving high forecasting accuracy and maintaining interpretability.",
+            "Generalization: The proposed interpretable models might not generalize well across different types of time series data, requiring domain-specific adjustments."
+        ]
+    },
+    {
+        "Name": "interference_aware_nn",
+        "Title": "Interference-Aware Neural Networks for Robust Time Series Forecasting",
+        "Short Hypothesis": "Integrating noise suppression and redundancy reduction principles directly into neural network architectures can significantly enhance their robustness to interference and noise in time series data, leading to improved forecasting accuracy in real-world noisy environments.",
+        "Related Work": "Existing literature on robust neural networks for time series forecasting primarily focuses on post-training techniques like specialized loss functions and attention mechanisms. Notable works include robust RNNs (Zhang et al., 2023) and attention-based robust representations (Niu et al., 2024). However, these approaches do not address robustness at the architectural level. Our proposal distinguishes itself by embedding noise suppression and redundancy reduction directly into the neural network architecture, inspired by biological systems' ability to filter out irrelevant information.",
+        "Abstract": "This research proposes the development of interference-aware neural network architectures specifically designed for robust time series forecasting. Real-world time series data often contain significant noise and interference, degrading the performance of traditional models. Inspired by biological systems that efficiently filter out irrelevant information, this study aims to integrate principles such as noise suppression and redundancy reduction directly into the neural network architecture. We hypothesize that these interference-aware models will outperform traditional architectures in noisy environments. The models will be evaluated on standard time series datasets with varying levels of artificially introduced noise. Evaluation metrics will include Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and robustness metrics like Noise-to-Signal Ratio (NSR).",
+        "Experiments": [
+            "Data Collection and Preprocessing: Collect various standard time series datasets (e.g., M4, Solar-Energy, Exchange-Rate). Preprocess the data for consistency and normalization.",
+            "Model Development: Develop neural network architectures that incorporate principles of noise suppression and redundancy reduction. Techniques may include specialized attention mechanisms, noise-filtering layers, and adaptive loss functions.",
+            "Noise Injection: Introduce varying levels of artificial noise into the datasets to simulate real-world interference.",
+            "Training and Evaluation: Train the proposed models and compare their performance against traditional models like LSTMs and Transformers. Evaluation metrics will include MAE, RMSE, and NSR.",
+            "Ablation Study: Conduct an ablation study to understand the contribution of each robustness component in the model."
+        ],
+        "Risk Factors and Limitations": [
+            "Model Complexity: Integrating robustness principles might increase the complexity of the model, potentially affecting training time and resource requirements.",
+            "Trade-off Between Accuracy and Robustness: There may be a trade-off between achieving high forecasting accuracy and maintaining robustness to noise.",
+            "Generalization: The proposed robust models might not generalize well across different types of time series data, requiring domain-specific adjustments."
+        ]
+    }
+]
